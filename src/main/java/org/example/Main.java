@@ -8,7 +8,7 @@ public class Main {
 
         Elbil elBil = new Elbil("XYZ456", "Tesla", "Model S", 85, 400, 200, 2020, 4);
 
-        Dieselbil dieselBil = new Dieselbil("ABC123", "BMW", "X5", 18, true, 2019, 5);
+        Dieselbil dieselBil = new Dieselbil("ABC123", "BMW", "X5", 18, false, 2019, 5);
 
         garage.tilføjBil(benzinBil);
         garage.tilføjBil(elBil);

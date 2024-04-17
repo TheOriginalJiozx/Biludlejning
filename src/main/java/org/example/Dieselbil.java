@@ -20,19 +20,25 @@ public class Dieselbil extends Bil {
     }
 
     public double beregnGrønAfgiftForBilpark() {
-        int partikUdlejningsAfgift = 1000;
+        double grønAfgift = 0;
         if (kmPrL >= 20 && kmPrL <= 50) {
-            return 130;
+            grønAfgift = 330 + 130;
         } else if (kmPrL > 15 && kmPrL < 20) {
-            return 1390;
+            grønAfgift = 1050 + 1390;
         } else if (kmPrL >= 10 && kmPrL <= 15) {
-            return 1850;
+            grønAfgift = 2340 + 1850;
         } else if (kmPrL > 5 && kmPrL < 10) {
-            return 2770;
-        } else {
-            return 15260 + partikUdlejningsAfgift;
+            grønAfgift = 5500 + 2770;
+        } else if (kmPrL < 5) {
+            grønAfgift = 10470 + 15260;
         }
+
+        if (!isHarPartikelfilter()) {
+            grønAfgift += 1000;
+        }
+        return grønAfgift;
     }
+
 
     @Override
     public String toString() {
